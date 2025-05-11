@@ -1,20 +1,17 @@
 package com.apsus.learn_spring_aop.data;
 
-
 import org.springframework.stereotype.Repository;
 
-
 @Repository
-public class DataService1 {
+public class DataService2 {
 
 
-	public int[] retrieveData(){
-
-		try {
-			Thread.sleep(500);
+	public int[] getData(){
+		try{
+			Thread.sleep(1400);
 		}catch (Exception e){
 			e.printStackTrace();
 		}
-		return new int[]{1,2,999,43,555};
+		return new int[]{789, 31, 90, 9,12, 33};
 	}
 }

@@ -15,20 +15,20 @@ public class LoggingAspect {
 
 	private Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 	//Pointcut - when? expression that identifies method calls to be intercepted
-	@Before("execution(* com.apsus.learn_spring_aop.*.*.*(..))")
+	@Before("com.apsus.learn_spring_aop.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
 	public void logMethodCall(JoinPoint joinPoint) {
 		// Logic - What?
-		logger.info("Before method is called - {} - args - {}", joinPoint, joinPoint.getArgs());
+		logger.info("BeforeAspect method is called - {} - args - {}", joinPoint, joinPoint.getArgs());
 	}
 
-	@After("execution(* com.apsus.learn_spring_aop.*.*.*(..))")
+	@After("com.apsus.learn_spring_aop.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
 	public void logMethodAfter(JoinPoint joinPoint) {
-		logger.info("After method is called - {}  has executed", joinPoint);
+		logger.info("AfterAspect method is called - {}  has executed", joinPoint);
 	}
 
 
 	@AfterThrowing(
-		pointcut = "execution(* com.apsus.learn_spring_aop.*.*.*(..))",
+		pointcut = "com.apsus.learn_spring_aop.aspects.CommonPointcutConfig.businessAndDataPackageConfig()",
 		throwing = "exception"
 	)
 	public void logMethodAfterThrowing(JoinPoint joinPoint, Exception exception) {
@@ -37,7 +37,7 @@ public class LoggingAspect {
 
 
 	@AfterReturning(
-		pointcut = "execution(* com.apsus.learn_spring_aop.*.*.*(..))",
+		pointcut = "com.apsus.learn_spring_aop.aspects.CommonPointcutConfig.businessAndDataPackageConfig()",
 		returning = "resultValue"
 	)
 	public void logMethodAfterReturning(JoinPoint joinPoint, Object resultValue) {
