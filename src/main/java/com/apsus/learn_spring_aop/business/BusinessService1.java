@@ -1,7 +1,6 @@
 package com.apsus.learn_spring_aop.business;
 
 import com.apsus.learn_spring_aop.data.DataService1;
-import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 
 import java.util.Arrays;

@@ -11,9 +11,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class LearnSpringAopApplication implements CommandLineRunner {
 
-	private Logger logger = LoggerFactory.getLogger(getClass());
-	private BusinessService1 businessService1;
-	private BusinessService2 businessService2;
+	private final Logger logger = LoggerFactory.getLogger(getClass());
+	private final BusinessService1 businessService1;
+	private final BusinessService2 businessService2;
 
 	public LearnSpringAopApplication(BusinessService1 businessService1, BusinessService2 businessService2) {
 		this.businessService1 = businessService1;
