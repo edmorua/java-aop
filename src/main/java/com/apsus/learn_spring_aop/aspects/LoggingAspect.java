@@ -13,9 +13,9 @@ import org.springframework.context.annotation.Configuration;
 @Aspect
 public class LoggingAspect {
 
-	private Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
+	private final Logger logger = LoggerFactory.getLogger(LoggingAspect.class);
 	//Pointcut - when? expression that identifies method calls to be intercepted
-	@Before("com.apsus.learn_spring_aop.aspects.CommonPointcutConfig.businessAndDataPackageConfig()")
+	@Before("com.apsus.learn_spring_aop.aspects.CommonPointcutConfig.allPackageConfigUsingBean()")
 	public void logMethodCall(JoinPoint joinPoint) {
 		// Logic - What?
 		logger.info("BeforeAspect method is called - {} - args - {}", joinPoint, joinPoint.getArgs());
