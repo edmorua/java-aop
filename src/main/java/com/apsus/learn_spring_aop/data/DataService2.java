@@ -1,11 +1,12 @@
 package com.apsus.learn_spring_aop.data;
 
+import com.apsus.learn_spring_aop.annotations.TrackTime;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class DataService2 {
 
-
+	@TrackTime
 	public int[] getData(){
 		try{
 			Thread.sleep(1400);
